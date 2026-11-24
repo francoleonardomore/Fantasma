@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="es-AR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Manos &amp; Patas | Uñas y paseo de perros por hora</title>
+<meta name="description" content="Turnos de uñas y paseos de perros por hora. Pedí tu servicio online.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Nunito+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --ink:#2E1F3F; --muted:#6B5F78; --bg:#F7F4FA; --card:#FFFFFF; --line:#E4DCEC;
+  --rose:#C93C7A; --rose-soft:#FBE8F1;
+  --leaf:#23795A; --leaf-soft:#E3F3EC;
+  --radius:18px;
+  --serif:"DM Serif Display",Georgia,serif;
+  --sans:"Nunito Sans",system-ui,-apple-system,Segoe UI,Arial,sans-serif;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:var(--sans);color:var(--ink);background:var(--bg);line-height:1.6;font-size:17px}
+img{max-width:100%;display:block}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--ink);outline-offset:3px}
+.wrap{max-width:1100px;margin:0 auto;padding:0 22px}
+
+/* Cabecera */
+header{background:var(--card);border-bottom:1px solid var(--line);position:sticky;top:0;z-index:20}
+.nav{display:flex;align-items:center;justify-content:space-between;gap:16px;padding:14px 22px;max-width:1100px;margin:0 auto}
+.logo{font-family:var(--serif);font-size:1.5rem;text-decoration:none}
+.nav ul{display:flex;gap:22px;list-style:none;font-weight:600;font-size:.95rem}
+.nav a{text-decoration:none}
+.nav a:hover{text-decoration:underline}
+
+/* Entradas */
+.hero{padding:56px 0 40px}
+.hero h1{font-family:var(--serif);font-weight:400;font-size:clamp(2.2rem,5.5vw,3.8rem);line-height:1.1;max-width:15ch}
+.hero p.lead{margin-top:16px;max-width:52ch;color:var(--muted);font-size:1.1rem}
+.doors{display:grid;grid-template-columns:1fr 1fr;gap:22px;margin-top:36px}
+.door{border-radius:var(--radius);padding:34px 30px;text-decoration:none;display:flex;flex-direction:column;gap:10px;min-height:260px;justify-content:flex-end;transition:transform .2s}
+.door:hover{transform:translateY(-4px)}
+.door h2{font-family:var(--serif);font-weight:400;font-size:2rem;line-height:1.15}
+.door p{max-width:34ch}
+.door .btn{align-self:flex-start;margin-top:8px}
+.door.unas{background:var(--rose);color:#fff}
+.door.paseo{background:var(--leaf);color:#fff}
+.btn{display:inline-block;padding:13px 24px;border-radius:999px;font-weight:700;font-size:1rem;border:0;cursor:pointer;text-decoration:none;font-family:var(--sans)}
+.door .btn{background:#fff;color:var(--ink)}
+
+/* Secciones */
+section.servicio{padding:64px 0;border-top:1px solid var(--line)}
+.head{max-width:60ch;margin-bottom:30px}
+.head h2{font-family:var(--serif);font-weight:400;font-size:clamp(1.8rem,4vw,2.6rem);line-height:1.15}
+.head p{color:var(--muted);margin-top:8px}
+
+/* Galería */
+.gallery{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-bottom:34px}
+.gallery figure{position:relative;border-radius:14px;overflow:hidden;aspect-ratio:1/1;background:linear-gradient(135deg,var(--rose-soft),#F3D3E3)}
+.gallery img{width:100%;height:100%;object-fit:cover}
+.gallery figcaption{position:absolute;left:0;right:0;bottom:0;padding:8px 12px;font-size:.85rem;font-weight:600;background:rgba(255,255,255,.88)}
+
+/* Precios */
+.prices{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-bottom:34px}
+.price{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:20px}
+.price strong{display:block;font-size:1.05rem}
+.price span{color:var(--muted);font-size:.95rem}
+.price em{display:block;margin-top:10px;font-style:normal;font-family:var(--serif);font-size:1.6rem}
+#unas .price em{color:var(--rose)} #paseos .price em{color:var(--leaf)}
+
+/* Formularios */
+form{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:28px;display:grid;grid-template-columns:1fr 1fr;gap:16px}
+form h3{grid-column:1/-1;font-family:var(--serif);font-weight:400;font-size:1.5rem}
+.field{display:flex;flex-direction:column;gap:6px}
+.field.full{grid-column:1/-1}
+label{font-weight:700;font-size:.92rem}
+input,select,textarea{font:inherit;padding:12px 14px;border:1.5px solid var(--line);border-radius:10px;background:#fff;color:var(--ink);width:100%}
+input:focus,select:focus,textarea:focus{border-color:var(--ink);outline:none}
+textarea{min-height:90px;resize:vertical}
+form .btn{grid-column:1/-1;justify-self:start;color:#fff}
+#unas form .btn{background:var(--rose)}
+#paseos form .btn{background:var(--leaf)}
+.note{grid-column:1/-1;font-size:.88rem;color:var(--muted)}
+
+/* Pie */
+footer{background:var(--ink);color:#EDE6F5;padding:40px 0;margin-top:20px}
+footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:20px}
+footer a{color:#fff}
+footer small{color:#B9AECA}
+
+@media (max-width:760px){
+  .nav ul{display:none}
+  .doors,.prices{grid-template-columns:1fr}
+  .gallery{grid-template-columns:repeat(2,1fr)}
+  form{grid-template-columns:1fr;padding:22px}
+  .door{min-height:220px}
+}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}.door{transition:none}}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="nav">
+    <a class="logo" href="#inicio">Manos &amp; Patas</a>
+    <ul>
+      <li><a href="#unas">Uñas</a></li>
+      <li><a href="#paseos">Paseo de perros</a></li>
+      <li><a href="#contacto">Contacto</a></li>
+    </ul>
+  </div>
+</header>
+
+<main id="inicio">
+  <!-- ENTRADAS -->
+  <div class="wrap hero">
+    <h1>Uñas impecables y perros felices</h1>
+    <p class="lead">Elegí lo que necesitás: sacá turno para tus uñas o pedí un paseo para tu perro por hora. Te confirmamos por WhatsApp.</p>
+    <div class="doors">
+      <a class="door unas" href="#pedir-unas">
+        <h2>Quiero mis uñas</h2>
+        <p>Esmaltado, semipermanente y esculpidas. Mirá los diseños y pedí tu turno.</p>
+        <span class="btn">Pedir turno de uñas</span>
+      </a>
+      <a class="door paseo" href="#pedir-paseo">
+        <h2>Paseo para mi perro</h2>
+        <p>Paseos por hora con cuidado, agua y fotos del recorrido.</p>
+        <span class="btn">Pedir paseo</span>
+      </a>
+    </div>
+  </div>
+
+  <!-- UÑAS -->
+  <section class="servicio" id="unas">
+    <div class="wrap">
+      <div class="head">
+        <h2>Diseños de uñas</h2>
+        <p>Algunos de nuestros trabajos. Traé tu idea o elegí uno de estos.</p>
+      </div>
+
+      <!-- Reemplazá cada src por el nombre de tu imagen (carpeta "img") -->
+      <div class="gallery">
+        <figure><img src="img/una1.jpg" alt="Diseño de uñas 1" loading="lazy" onerror="this.remove()"><figcaption>Diseño 1</figcaption></figure>
+        <figure><img src="img/una2.jpg" alt="Diseño de uñas 2" loading="lazy" onerror="this.remove()"><figcaption>Diseño 2</figcaption></figure>
+        <figure><img src="img/una3.jpg" alt="Diseño de uñas 3" loading="lazy" onerror="this.remove()"><figcaption>Diseño 3</figcaption></figure>
+        <figure><img src="img/una4.jpg" alt="Diseño de uñas 4" loading="lazy" onerror="this.remove()"><figcaption>Diseño 4</figcaption></figure>
+        <figure><img src="img/una5.jpg" alt="Diseño de uñas 5" loading="lazy" onerror="this.remove()"><figcaption>Diseño 5</figcaption></figure>
+        <figure><img src="img/una6.jpg" alt="Diseño de uñas 6" loading="lazy" onerror="this.remove()"><figcaption>Diseño 6</figcaption></figure>
+      </div>
+
+      <div class="prices">
+        <div class="price"><strong>Esmaltado tradicional</strong><span>Aprox. 45 min</span><em>$ 8.000</em></div>
+        <div class="price"><strong>Semipermanente</strong><span>Aprox. 1 h 15 min</span><em>$ 12.000</em></div>
+        <div class="price"><strong>Esculpidas</strong><span>Aprox. 2 h 30 min</span><em>$ 20.000</em></div>
+      </div>
+
+      <form id="pedir-unas" data-tipo="unas">
+        <h3>Pedí tu turno de uñas</h3>
+        <div class="field"><label for="u-nombre">Nombre y apellido</label><input id="u-nombre" name="nombre" required autocomplete="name"></div>
+        <div class="field"><label for="u-tel">Teléfono</label><input id="u-tel" name="tel" type="tel" required autocomplete="tel"></div>
+        <div class="field"><label for="u-servicio">Servicio</label>
+          <select id="u-servicio" name="servicio" required>
+            <option value="">Elegí una opción</option>
+            <option>Esmaltado tradicional</option>
+            <option>Semipermanente</option>
+            <option>Esculpidas</option>
+            <option>Retiro de esmalte o esculpidas</option>
+          </select></div>
+        <div class="field"><label for="u-diseno">Diseño elegido</label>
+          <select id="u-diseno" name="diseno">
+            <option>Todavía no elegí</option>
+            <option>Diseño 1</option><option>Diseño 2</option><option>Diseño 3</option>
+            <option>Diseño 4</option><option>Diseño 5</option><option>Diseño 6</option>
+            <option>Otro (te mando una foto)</option>
+          </select></div>
+        <div class="field"><label for="u-fecha">Fecha preferida</label><input id="u-fecha" name="fecha" type="date" required></div>
+        <div class="field"><label for="u-hora">Horario preferido</label><input id="u-hora" name="hora" type="time" required></div>
+        <div class="field full"><label for="u-msg">Comentarios</label><textarea id="u-msg" name="msg" placeholder="Colores, largo, alergias, etc."></textarea></div>
+        <button class="btn" type="submit">Enviar pedido por WhatsApp</button>
+        <p class="note">Al enviar se abre WhatsApp con tu pedido listo. Te confirmamos el turno por ese medio.</p>
+      </form>
+    </div>
+  </section>
+
+  <!-- PASEOS -->
+  <section class="servicio" id="paseos">
+    <div class="wrap">
+      <div class="head">
+        <h2>Paseo de perros por hora</h2>
+        <p>Paseos individuales o en grupo reducido, con tiempo para jugar, hacer sus necesidades y tomar agua.</p>
+      </div>
+
+      <div class="prices">
+        <div class="price"><strong>Paseo de 30 minutos</strong><span>Ideal para cachorros y perros mayores</span><em>$ 5.000</em></div>
+        <div class="price"><strong>Paseo de 1 hora</strong><span>El más elegido</span><em>$ 8.000</em></div>
+        <div class="price"><strong>Paseo de 2 horas</strong><span>Para perros muy activos</span><em>$ 14.000</em></div>
+      </div>
+
+      <form id="pedir-paseo" data-tipo="paseo">
+        <h3>Pedí un paseo para tu perro</h3>
+        <div class="field"><label for="p-nombre">Tu nombre y apellido</label><input id="p-nombre" name="nombre" required autocomplete="name"></div>
+        <div class="field"><label for="p-tel">Teléfono</label><input id="p-tel" name="tel" type="tel" required autocomplete="tel"></div>
+        <div class="field"><label for="p-perro">Nombre del perro</label><input id="p-perro" name="perro" required></div>
+        <div class="field"><label for="p-raza">Raza y tamaño</label><input id="p-raza" name="raza" placeholder="Ej: Labrador, grande" required></div>
+        <div class="field"><label for="p-dur">Duración</label>
+          <select id="p-dur" name="dur" required>
+            <option value="">Elegí una opción</option>
+            <option>30 minutos</option><option>1 hora</option><option>2 horas</option>
+          </select></div>
+        <div class="field"><label for="p-fecha">Fecha</label><input id="p-fecha" name="fecha" type="date" required></div>
+        <div class="field"><label for="p-hora">Horario de retiro</label><input id="p-hora" name="hora" type="time" required></div>
+        <div class="field"><label for="p-dir">Dirección de retiro</label><input id="p-dir" name="dir" required autocomplete="street-address"></div>
+        <div class="field full"><label for="p-msg">Indicaciones sobre el perro</label><textarea id="p-msg" name="msg" placeholder="Carácter, si tira de la correa, vacunas, cuidados especiales…"></textarea></div>
+        <button class="btn" type="submit">Enviar pedido por WhatsApp</button>
+        <p class="note">Al enviar se abre WhatsApp con tu pedido listo. Te confirmamos disponibilidad por ese medio.</p>
+      </form>
+    </div>
+  </section>
+</main>
+
+<footer id="contacto">
+  <div class="wrap">
+    <div>
+      <strong style="font-family:var(--serif);font-size:1.3rem;font-weight:400">Manos &amp; Patas</strong><br>
+      Fray Luis Beltrán, Maipú, Mendoza<br>
+      <small>Atención con turno previo</small>
+    </div>
+    <div>
+      WhatsApp: <a href="https://wa.me/5492610000000">+54 9 261 000 0000</a><br>
+      Instagram: <a href="#">@manosypatas</a><br>
+      <small>Lunes a sábado, 9 a 19 h</small>
+    </div>
+  </div>
+</footer>
+
+<script>
+  // Cambiá este número por el tuyo: código de país + área + número, sin + ni espacios
+  const WHATSAPP = "5492610000000";
+
+  // No permitir fechas pasadas
+  const hoy = new Date().toISOString().split("T")[0];
+  document.querySelectorAll('input[type="date"]').forEach(i => i.min = hoy);
+
+  function fecha(iso){ const [y,m,d] = iso.split("-"); return d + "/" + m + "/" + y; }
+
+  document.querySelectorAll("form").forEach(form => {
+    form.addEventListener("submit", e => {
+      e.preventDefault();
+      const f = Object.fromEntries(new FormData(form).entries());
+      let txt;
+      if (form.dataset.tipo === "unas") {
+        txt = "Hola! Quiero pedir un turno de uñas.\n" +
+          "Nombre: " + f.nombre + "\nTeléfono: " + f.tel +
+          "\nServicio: " + f.servicio + "\nDiseño: " + f.diseno +
+          "\nFecha: " + fecha(f.fecha) + " a las " + f.hora +
+          (f.msg ? "\nComentarios: " + f.msg : "");
+      } else {
+        txt = "Hola! Quiero pedir un paseo para mi perro.\n" +
+          "Nombre: " + f.nombre + "\nTeléfono: " + f.tel +
+          "\nPerro: " + f.perro + " (" + f.raza + ")" +
+          "\nDuración: " + f.dur +
+          "\nFecha: " + fecha(f.fecha) + " a las " + f.hora +
+          "\nDirección: " + f.dir +
+          (f.msg ? "\nIndicaciones: " + f.msg : "");
+      }
+      window.open("https://wa.me/" + WHATSAPP + "?text=" + encodeURIComponent(txt), "_blank");
+    });
+  });
+</script>
+</body>
+</html>
